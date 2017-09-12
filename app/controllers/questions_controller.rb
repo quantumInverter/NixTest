@@ -10,6 +10,8 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+    @comments = @question.comments
+    @comment  = Comment.new()
   end
 
   # GET /questions/new
@@ -62,13 +64,13 @@ class QuestionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_question
-      @question = Question.find(params[:id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
       params.require(:question).permit(:title, :content)
+    end
+
+    # Use callbacks to share common setup or constraints between actions.
+    def set_question
+      @question = Question.find(params[:id])
     end
 end

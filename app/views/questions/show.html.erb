@@ -1,9 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<%= @question.title %>
-<br/>
-<%= @question.content %>
-<br/>
+<div>
+  <%= @question.title %>
+  <br/>
+  <%= @question.content %>
+</div>
+
+<div>
+  <table>
+    <thead>
+    <tr>
+      <th colspan="2"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.content %></td>
+      </tr>
+    <% end %>
+
+    <tr>
+      <td><%= render "comments/form", comment: @comment, question_id: @question.id %></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
