@@ -1,0 +1,6 @@
+= form_for [@question, Comment.new] do |f|
+  .actions
+    .field
+      = f.text_area :content, class: 'form-control', placeholder: 'Comment content'
+    .actions
+      = f.submit "Submit", class: 'btn btn-default'

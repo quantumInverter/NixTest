@@ -1,0 +1,8 @@
+= form_with(model: question, local: true) do |f|
+  .actions
+    .field
+      = f.text_field :title, autofocus: true, class: 'form-control', placeholder: 'Question title'
+    .field
+      = f.text_area :content, class: 'form-control', placeholder: 'Question content'
+    .actions
+      = f.submit "Sign up", class: 'btn btn-default'

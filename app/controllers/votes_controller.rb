@@ -2,7 +2,7 @@ class VotesController < ApplicationController
   before_action :create_or_update, only: :create
   before_action :set_vote, only: :update
 
-  # TODO: Make it right
+  # HACK: I should make it right
   def create
     if @vote
       respond_to do |format|

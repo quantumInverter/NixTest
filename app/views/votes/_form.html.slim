@@ -1,0 +1,14 @@
+= form_for [votable, Vote.new], remote: true  do |f|
+  .actions
+    = f.hidden_field :rating, value: 1
+    .actions
+      = f.button '', class: 'fa fa-arrow-up btn-vote'
+
+.text-center id=("#{votable.class.to_s.downcase + votable.id.to_s}")
+  = votable.rating
+
+= form_for [votable, Vote.new], remote: true  do |f|
+  .actions
+    = f.hidden_field :rating, value: -1
+    .actions
+      = f.button '', class: 'fa fa-arrow-down btn-vote'

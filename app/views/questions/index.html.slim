@@ -1,0 +1,10 @@
+p#notice = notice
+
+.row
+  .col-lg-12
+    h1 Questions
+
+= render @questions
+
+.row
+  .col-lg-12 = link_to 'New Question', new_question_path, class: 'btn btn-primary btn-block'
