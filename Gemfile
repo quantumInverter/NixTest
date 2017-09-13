@@ -32,10 +32,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Device for Authentication
 gem 'devise'
-gem 'omniauth'
+gem 'omniauth-oauth2'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
+#gem 'omniauth-google-oauth2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

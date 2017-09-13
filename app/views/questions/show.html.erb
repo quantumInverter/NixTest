@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <div>
+  <%#= render 'votes/form', vote: Vote.new %>
+  <br/>
   <%= @question.title %>
   <br/>
   <%= @question.content %>
@@ -17,15 +19,14 @@
     <tbody>
     <% @comments.each do |comment| %>
       <tr>
+        <td><%= comment.rating %></td>
         <td><%= comment.content %></td>
       </tr>
     <% end %>
-
-    <tr>
-      <td><%= render "comments/form", comment: @comment, question_id: @question.id %></td>
-    </tr>
     </tbody>
   </table>
+
+  <%= render 'comments/form' %>
 </div>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |

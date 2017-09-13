@@ -1,5 +1,6 @@
 class Comment < ApplicationRecord
+  include Votable
+
   belongs_to :user
   belongs_to :question
-  has_many :votes, as: :votable
 end
