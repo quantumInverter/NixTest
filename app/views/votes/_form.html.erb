@@ -1,6 +1,23 @@
-<%= form_with(model:  vote,
-              url:    '') do |f| %>
+<%= form_for [votable, Vote.new], remote: true  do |f| %>
     <div class="actions">
-      <%= f.submit "+" %>
+      <%= f.hidden_field :rating, value: 1 %>
+
+      <div class="actions">
+        <%= f.submit "+" %>
+      </div>
+    </div>
+<% end %>
+
+<div id="<%= votable.class.to_s.downcase << votable.id.to_s %>">
+  <%= votable.rating %>
+</div>
+
+<%= form_for [votable, Vote.new], remote: true  do |f| %>
+    <div class="actions">
+      <%= f.hidden_field :rating, value: -1 %>
+
+      <div class="actions">
+        <%= f.submit "-" %>
+      </div>
     </div>
 <% end %>

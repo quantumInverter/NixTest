@@ -1,0 +1,1 @@
+document.getElementById("<%= @vote.votable_type.downcase << @vote.votable_id.to_s %>").innerHTML = "<%= @vote.votable.rating %>";

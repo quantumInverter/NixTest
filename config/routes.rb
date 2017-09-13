@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   resources :users, only: :show
     resources :questions, shallow: true do
     resources :comments, only: [:create, :update, :destroy] do
-      resources :votes, only: [:create, :update, :destroy]
+      resources :votes, only: [:create, :update]
     end
-    resources :votes, only: [:create, :update, :destroy]
+    resources :votes, only: [:create, :update]
   end
 end
